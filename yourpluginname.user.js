@@ -10,7 +10,7 @@
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
-
+// DO NO OBFUSCATE ABOVE THIS COMMENT - ONLY CODE BELOW - DELETE THIS COMMENT WHEN YOURE DONE
 (function () {
    'use strict';
 
